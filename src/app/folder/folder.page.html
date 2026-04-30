@@ -7,15 +7,34 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-padding ion-margin"> 
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">{{ folder }}</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-grid class="ion-padding ion-margin">
+    <form [formGroup]="ionselectform">
+    <ion-row id="month-wrapper" class="ion-padding ion-margin">
+      <ion-col class="ion-padding ion-margin">
+        <ion-select id="monthSelector" mode="md"
+          label="Select Month" placeholder="Choose a month"
+          interface="action-sheet"
+          formControlName="birthmonth"
+          [interfaceOptions]="customActionSheetOptions"
+          aria-describedby="accessibilityError"
+          aria-label="select your birth month">
+          @for (month of months; track month.id) {
+          <ion-select-option [value]="month.id" [attr.aria-label]="month.name">{{ month.name }}</ion-select-option>
+          }
+        </ion-select>
+      </ion-col>
+    </ion-row>
+  </form>
+  
+  <!-- @if (ionselectform.get('birthmonth')?.value !== null) {
+  <p>You selected: {{ selectedMonthName }}</p>
+  } -->
+</ion-grid>
 </ion-content>

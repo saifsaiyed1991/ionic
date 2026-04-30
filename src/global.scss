@@ -9,21 +9,10 @@
  * https://ionicframework.com/docs/layout/global-stylesheets
  */
 
-/* Core CSS required for Ionic components to work properly */
-@import "@ionic/angular/css/core.css";
-
-/* Basic CSS for apps built with Ionic */
-@import "@ionic/angular/css/normalize.css";
-@import "@ionic/angular/css/structure.css";
-@import "@ionic/angular/css/typography.css";
-@import "@ionic/angular/css/display.css";
-
-/* Optional CSS utils that can be commented out */
-@import "@ionic/angular/css/padding.css";
-@import "@ionic/angular/css/float-elements.css";
-@import "@ionic/angular/css/text-alignment.css";
-@import "@ionic/angular/css/text-transformation.css";
-@import "@ionic/angular/css/flex-utils.css";
+/*
+ * Ionic CSS is automatically included via provideIonicAngular() in main.ts
+ * No manual CSS imports needed for Ionic 8
+ */
 
 /**
  * Ionic Dark Mode
@@ -35,3 +24,52 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
+
+.my-custom-class {
+    .action-sheet-group {
+        .action-sheet-button {
+            --background: var(--ion-color-primary);
+            --color: var(--ion-color-light);
+        }
+    }
+
+    // .action-sheet-group.sc-ion-action-sheet-md {
+    //         --background: var(--ion-color-secondary);
+    //         --color: var(--ion-color-light);
+    // }
+
+    .action-sheet-title {
+        --color: var(--ion-color-primary);
+    }
+
+    .action-sheet-button {
+        --background: var(--ion-color-secondary);
+        --color: var(--ion-color-light);
+    }
+
+    .action-sheeet-selected {
+        --background: var(--ion-color-success);
+        --color: var(--ion-color-light);
+    }
+
+    .action-sheet-button-inner {
+        --background: var(--ion-color-secondary);
+        --color: var(--ion-color-light);
+    }
+
+    .action-sheet-cancel {
+        background: var(--ion-color-tertiary);
+        --color: var(--ion-color-light);
+        --border-radius: 10px;
+        height: 50px;
+
+        .action-sheet-button-inner {
+            background: var(--ion-color-tertiary);
+            --color: var(--ion-color-light);
+        }
+    }
+
+    .action-sheet-container {
+        padding: 20px;
+    }
+}
