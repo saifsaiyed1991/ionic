@@ -15,7 +15,7 @@
   </ion-header>
 
 <ion-grid class="ion-padding ion-margin">
-    <form [formGroup]="ionselectform">
+    <form [formGroup]="ionselectform" action="#">
     <ion-row id="month-wrapper" class="ion-padding ion-margin">
       <ion-col size="7" class="ion-padding ion-margin">
         <ion-select id="monthSelector" mode="md"
@@ -31,10 +31,19 @@
         </ion-select>
       </ion-col>
     </ion-row>
+
+    <ion-row id="inputRow" class="input-wrapper">
+      <ion-col id="inputCol" class="input-wrapper-2">
+        <ion-input id="inputField" class="firstname-input" type="text" placeholder="Enter your first name"
+          formControlName="firstname" aria-describedby="accessibilityError" [attr.aria-label]="inputAriaLabel"
+          autocapitalize="off" autocorrect="off" spellcheck="false">
+        </ion-input>
+      </ion-col>
+    </ion-row>
   </form>
   
-  <!-- @if (ionselectform.get('birthmonth')?.value !== null) {
+  @if (ionselectform.get('birthmonth')?.value !== null) {
   <p>You selected: {{ selectedMonthName }}</p>
-  } -->
+  }
 </ion-grid>
 </ion-content>

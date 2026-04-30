@@ -25,6 +25,12 @@
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
 
+ion-input {
+  --background: var(--ion-color-light);
+  --color: var(--ion-color-dark);
+  font-size: large !important;
+}
+
 .my-custom-class {
     .action-sheet-group {
         .action-sheet-button {
