@@ -17,14 +17,14 @@
 <ion-grid class="ion-padding ion-margin">
     <form [formGroup]="ionselectform">
     <ion-row id="month-wrapper" class="ion-padding ion-margin">
-      <ion-col class="ion-padding ion-margin">
+      <ion-col size="7" class="ion-padding ion-margin">
         <ion-select id="monthSelector" mode="md"
-          label="Select Month" placeholder="Choose a month"
+          placeholder="Choose a month"
           interface="action-sheet"
           formControlName="birthmonth"
           [interfaceOptions]="customActionSheetOptions"
           aria-describedby="accessibilityError"
-          aria-label="select your birth month">
+          [attr.aria-label]="ionSelectAriaLabel">
           @for (month of months; track month.id) {
           <ion-select-option [value]="month.id" [attr.aria-label]="month.name">{{ month.name }}</ion-select-option>
           }

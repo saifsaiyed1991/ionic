@@ -33,6 +33,7 @@ export class FolderPage implements OnInit {
   public customActionSheetOptions = {
     cssClass: 'my-custom-class',
   };
+  public ionSelectAriaLabel = 'Select your birth month';
 
   constructor() {}
 
